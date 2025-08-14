@@ -1,11 +1,12 @@
 
+
+
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QMessageBox
 # QLabel: 문제 표시
 # QLineEdit: 사용자 입력
 # QPushButton + Signal & Slot: 클릭 시 답 체크
 # QMessageBox: 정답/오답 알림
-
-import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QMessageBox
 from datetime import datetime
 
 # 문제 리스트
@@ -62,5 +63,6 @@ submit_button.clicked.connect(check_answer)
 
 window.show()
 sys.exit(app.exec_())
+
 
 
