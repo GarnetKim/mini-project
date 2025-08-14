@@ -1,6 +1,3 @@
-
-
-
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QMessageBox
 # QLabel: 문제 표시
@@ -45,10 +42,10 @@ def save_score():
     with open("scores.txt", "a") as f:
         f.write(f"[{now}] 점수: {score}/{len(problems)}\n")
 
-app = QApplication(sys.argv)
-window = QWidget()
+app = QApplication(sys.argv) # PyQt 앱 엔진(이벤트 루프)을 한 번만 만드는 줄
+window = QWidget() # 최상위 창
 window.setWindowTitle("퀴즈 프로그램")
-window.setGeometry(300, 300, 400, 200)
+window.setGeometry(300, 300, 400, 200) # x, y, 가로, 세로
 
 problem_label = QLabel(problems[current_index]["question"], window)
 problem_label.move(20, 20)
@@ -63,6 +60,7 @@ submit_button.clicked.connect(check_answer)
 
 window.show()
 sys.exit(app.exec_())
+
 
 
 
