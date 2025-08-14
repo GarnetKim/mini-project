@@ -42,13 +42,13 @@ def save_score():
     with open("scores.txt", "a") as f:
         f.write(f"[{now}] 점수: {score}/{len(problems)}\n")
         
-#앱과 최상위 창 만들기
+# 앱과 최상위 창 만들기
 app = QApplication(sys.argv) # PyQt 앱 엔진(이벤트 루프)을 한 번만 만드는 줄
 window = QWidget() # 최상위 창
 window.setWindowTitle("퀴즈 프로그램")
 window.setGeometry(300, 300, 400, 200) # x, y, 가로, 세로
 
-#위젯(라벨/입력/버튼) 배치
+# 위젯(라벨/입력/버튼) 배치
 problem_label = QLabel(problems[current_index]["question"], window)
 problem_label.move(20, 20)
 
@@ -60,8 +60,10 @@ submit_button = QPushButton("제출", window)
 submit_button.move(240, 60)
 submit_button.clicked.connect(check_answer)
 
+# 화면 표시 + 이벤트 루프
 window.show()
 sys.exit(app.exec_())
+
 
 
 
