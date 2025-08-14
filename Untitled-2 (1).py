@@ -1,13 +1,15 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QMessageBox
+# QApplication: PyQt 앱을 구동하는 엔진
+# QWidget : 윈도우 창 역할
 # QLabel: 문제 표시
 # QLineEdit: 사용자 입력
 # QPushButton + Signal & Slot: 클릭 시 답 체크
-# QMessageBox: 정답/오답 알림
-from datetime import datetime
+# QMessageBox: 정답/오답 알림 (팝업 메시지 창)
+from datetime import datetime # 현재 날짜와 시간을 얻기 위해 사용
 
 # 문제 리스트
-problems = [
+problems = [ 
     {"question": "세상에서 가장 빠른 닭은?", "answer": "후다닥"},
     {"question": "병아리가 가장 잘 먹는 약은?", "answer": "삐약"},
     {"question": "왕이 넘어지면?", "answer": "킹콩"},
@@ -63,6 +65,7 @@ submit_button.clicked.connect(check_answer) # 시그널-슬롯 연결: 버튼 �
 # 화면 표시 + 이벤트 루프
 window.show() # 창을 화면에 나타내는 호출
 sys.exit(app.exec_()) # 종료
+
 
 
 
