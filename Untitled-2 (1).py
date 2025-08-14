@@ -1,11 +1,9 @@
-
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QMessageBox
 # QLabel: 문제 표시
 # QLineEdit: 사용자 입력
 # QPushButton + Signal & Slot: 클릭 시 답 체크
 # QMessageBox: 정답/오답 알림
-
-import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QMessageBox
 from datetime import datetime
 
 # 문제 리스트
@@ -44,7 +42,7 @@ def save_score():
     with open("scores.txt", "a") as f:
         f.write(f"[{now}] 점수: {score}/{len(problems)}\n")
 
-app = QApplication(sys.argv)
+app = QApplication(sys.argv) #PyQt 앱 엔진(이벤트 루프)을 한 번만 만드는 줄
 window = QWidget()
 window.setWindowTitle("퀴즈 프로그램")
 window.setGeometry(300, 300, 400, 200)
@@ -62,4 +60,5 @@ submit_button.clicked.connect(check_answer)
 
 window.show()
 sys.exit(app.exec_())
+
 
