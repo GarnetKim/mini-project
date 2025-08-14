@@ -20,9 +20,9 @@ problems = [
 score = 0
 current_index = 0
 
-def check_answer():
-    global score, current_index
-    user_answer = answer_input.text().strip()
+def check_answer(): #버튼 클릭시 실행되는 함수
+    global score, current_index #함수 내부에서 수정하기 위해 전역변수로 선언
+    user_answer = answer_input.text().strip() # 입력된 답안 (공백 제거)
     
     if user_answer == problems[current_index]["answer"]:
         QMessageBox.information(window, "결과", "정답! 🎉")
@@ -47,7 +47,7 @@ def save_score():
 # 앱과 최상위 창 만들기
 app = QApplication(sys.argv) # PyQt 앱 엔진(이벤트 루프)을 한 번만 만드는 줄
 window = QWidget() # 최상위 창
-window.setWindowTitle("퀴즈 프로그램")
+window.setWindowTitle("퀴즈 프로그램") # 창 제목 설정
 window.setGeometry(300, 300, 400, 200) # x, y, 가로, 세로
 
 # 위젯(라벨/입력/버튼) 배치
