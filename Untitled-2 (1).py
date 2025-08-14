@@ -70,20 +70,21 @@ window.setWindowTitle("퀴즈 프로그램")
 window.setGeometry(300, 300, 400, 200) # x, y, 가로, 세로
 
 # 위젯(라벨/입력/버튼) 배치
-problem_label = QLabel(problems[current_index]["question"], window)
-problem_label.move(20, 20)
+problem_label = QLabel(problems[current_index]["question"], window) # 텍스트 표시 위젯
+problem_label.move(20, 20) # 창 내부 좌표(왼쪽 위 모서리)
 
-answer_input = QLineEdit(window)
-answer_input.move(20, 60)
-answer_input.resize(200, 30)
+answer_input = QLineEdit(window) # 한 줄 입력
+answer_input.move(20, 60) # 좌표 지정
+answer_input.resize(200, 30) # 크기를 직접 지정
 
-submit_button = QPushButton("제출", window)
+submit_button = QPushButton("제출", window) # 클릭 가능한 버튼
 submit_button.move(240, 60)
-submit_button.clicked.connect(check_answer)
+submit_button.clicked.connect(check_answer) # 시그널-슬롯 연결: 버튼 클릭
 
 # 화면 표시 + 이벤트 루프
-window.show()
-sys.exit(app.exec_())
+window.show() # 창을 화면에 나타내는 호출
+sys.exit(app.exec_()) # 종료
+
 
 
 
