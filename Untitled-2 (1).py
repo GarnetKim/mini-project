@@ -10,9 +10,9 @@ from datetime import datetime
 
 # 문제 리스트
 problems = [
-    {"question": "12 + 7 = ?", "answer": "19"},
-    {"question": "5 * 6 = ?", "answer": "30"},
-    {"question": "15 - 9 = ?", "answer": "6"},
+    {"question": "세상에서 가장 빠른 닭은?", "answer": "후다닥"},
+    {"question": "병아리가 가장 잘 먹는 약은?", "answer": "삐약"},
+    {"question": "왕이 넘어지면?", "answer": "킹콩"},
     {"question": "9 ÷ 3 = ?", "answer": "3"},
     {"question": "7 * 8 = ?", "answer": "56"} 
 ]
@@ -62,3 +62,4 @@ submit_button.clicked.connect(check_answer)
 
 window.show()
 sys.exit(app.exec_())
+
